@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import twitterLogo from "./assets/twitter-logo.svg"
 import "./App.css"
 
@@ -7,6 +7,9 @@ const TWITTER_HANDLE = "_buildspace"
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`
 
 const App = () => {
+
+	// State
+	const [walletAddress, setWalletAddress] = useState(null)
 	/*
 	 * This function holds the logic for deciding if a Phantom Wallet is
 	 * connected or not
@@ -29,6 +32,9 @@ const App = () => {
 						"Connected with Public Key:",
 						response.publicKey.toString()
 					)
+
+          // set wallet address to be used later
+          setWalletAddress(response.publicKey.toString());
 				}
 			} else {
 				alert("Solana object not found! Get a Phantom Wallet 👻")
@@ -71,7 +77,7 @@ const App = () => {
 					<p className="sub-text">
 						View your GIF collection in the metaverse ✨
 					</p>
-					{renderNotConnectedContainer()}
+					{!walletAddress && renderNotConnectedContainer()}
 				</div>
 				<div className="footer-container">
 					<img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
