@@ -7,7 +7,6 @@ const TWITTER_HANDLE = "_buildspace"
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`
 
 const App = () => {
-
 	// State
 	const [walletAddress, setWalletAddress] = useState(null)
 	/*
@@ -33,8 +32,8 @@ const App = () => {
 						response.publicKey.toString()
 					)
 
-          // set wallet address to be used later
-          setWalletAddress(response.publicKey.toString());
+					// set wallet address to be used later
+					setWalletAddress(response.publicKey.toString())
 				}
 			} else {
 				alert("Solana object not found! Get a Phantom Wallet 👻")
@@ -44,7 +43,15 @@ const App = () => {
 		}
 	}
 
-	const connectWallet = async () => {}
+	const connectWallet = async () => {
+		const { solana } = window
+
+		if (solana) {
+			const response = await solana.connect()
+			console.log("Connected with Public Key:", response.publicKey.toString())
+			setWalletAddress(response.publicKey.toString())
+		}
+	}
 
 	/*
 	 * We want to render this UI when the user hasn't connected
