@@ -38,6 +38,21 @@ const App = () => {
 		}
 	}
 
+	const connectWallet = async () => {}
+
+	/*
+	 * We want to render this UI when the user hasn't connected
+	 * their wallet to our app yet.
+	 */
+	const renderNotConnectedContainer = () => (
+		<button
+			className="cta-button connect-wallet-button"
+			onClick={connectWallet}
+		>
+			Connect to Wallet
+		</button>
+	)
+
 	/*
 	 * When our component first mounts, let's check to see if we have a connected
 	 * Phantom Wallet
@@ -64,7 +79,10 @@ const App = () => {
 						href={TWITTER_LINK}
 						target="_blank"
 						rel="noreferrer"
-					>{`built on @${TWITTER_HANDLE}`}</a>
+					>
+						{`built on @${TWITTER_HANDLE}`}
+						{renderNotConnectedContainer()}
+					</a>
 				</div>
 			</div>
 		</div>
