@@ -1,7 +1,7 @@
 .App {
   height: 100vh;
   background-color: #1a202c;
-  overflow: scroll;
+  overflow-y: scroll;
   text-align: center;
 }
 
@@ -89,8 +89,9 @@
 
 .gif-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  grid-gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 1rem;
   justify-items: center;
   margin: 0;
   padding: 0;
