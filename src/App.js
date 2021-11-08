@@ -7,7 +7,7 @@ import twitterLogo from "./assets/twitter-logo.svg"
 import "./App.css"
 
 // SystemProgram is a reference to the Solana runtime!
-const { SystemProgram, Keypair } = web3
+const { SystemProgram } = web3
 
 // Create a permanent keypair for the account that will hold the GIF data.
 const arr = Object.values(kp._keypair.secretKey)
@@ -240,7 +240,7 @@ const App = () => {
 		<div className="App">
 			<div className={walletAddress ? "authed-container" : "container"}>
 				<div className="header-container">
-					<p className="header">🖼 GIF Portal</p>
+					<p className="header">🌳 TREE PORTAL</p>
 					<p className="sub-text">
 						View your GIF collection in the metaverse ✨
 					</p>
