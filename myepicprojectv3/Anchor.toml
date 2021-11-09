@@ -1,0 +1,14 @@
+# [programs.localnet]
+[programs.devnet]
+myepicprojectv3 = "81WCDqFWWYkpxdu2qLBs1ciAJzvukT6rDQXvBpStyQhh"
+
+[registry]
+url = "https://anchor.projectserum.com"
+
+[provider]
+# cluster = "localnet"
+cluster = "devnet"
+wallet = "/home/kangjing/.config/solana/id.json"
+
+[scripts]
+test = "node tests/myepicprojectv3.js" 
