@@ -101,7 +101,7 @@ input::placeholder {
 	grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
 	grid-gap: 1rem;
 	justify-items: center;
-	margin: 0;
+	margin: 10px;
 	padding: 0;
 }
 
@@ -124,16 +124,45 @@ input::placeholder {
 	display: inline-block;
 	color: white;
 	padding: 10px;
-	width: 50%;
-	height: 60px;
+	height: 45px;
 	font-size: 16px;
 	box-sizing: border-box;
 	background-color: rgba(0, 0, 0, 0.25);
 	border: none;
 	border-radius: 10px;
-	margin: 50px auto;
+	margin: 5px;
 }
 
 .connected-container button {
-	height: 50px;
+	height: auto;
+  margin: 5px;
+}
+
+.submit-container {
+	display: grid;
+  grid-template-rows: 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.submit1 {
+	grid-row-start: 1;
+	grid-column-start: 1;
+	grid-column-end: 4;
+}
+
+.submit2 {
+	grid-row-start: 2;
+	grid-column-start: 1;
+	grid-column-end: 4;
+}
+
+.submit3 {
+  grid-row-start: 1;
+  grid-row-end: 3;
+	grid-column-start: 4;
+}
+
+p {
+  color: white;
+  font-weight: bold;
 }
